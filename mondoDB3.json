@@ -1,0 +1,454 @@
+4 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Tue May 26 01:41:17 2026 from 74.71.157.171
+ubuntu@ip-172-31-34-29:~$ mongosh "mongodb+srv://cluster0.vneefgp.mongodb.net/" --apiVersion 1 --username admin
+Enter password: *********
+Current Mongosh Log ID: 6a163545cdbfda3b1e9df8a2
+Connecting to:          mongodb+srv://<credentials>@cluster0.vneefgp.mongodb.net/?appName=mongosh+2.8.3
+Using MongoDB:          8.0.23 (API Version 1)
+Using Mongosh:          2.8.3
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-bnuzrx-shard-0 [primary] test> use sampleDB
+switched to db sampleDB
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find
+[Function: find] AsyncFunction {
+  returnsPromise: true,
+  apiVersions: [ 1, Infinity ],
+  returnType: 'Cursor',
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Standalone', 'Sharded', 'LoadBalanced' ],
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  newShellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find()
+[
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a8'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a7'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a3'),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a4'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find()
+[
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a8'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a7'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a3'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a4'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> client_loop: send disconnect: Connection reset
+
+C:\Users\kesha\Downloads>cd downloads
+The system cannot find the path specified.
+
+C:\Users\kesha\Downloads>ssh -i "ec2_keypair.pem" ubuntu@ec2-18-226-78-226.us-east-2.compute.amazonaws.com
+Welcome to Ubuntu 26.04 LTS (GNU/Linux 7.0.0-1004-aws x86_64)
+
+ * Documentation:  https://docs.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed May 27 00:28:05 UTC 2026
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   88.7% of 6.61GB   Processes:             119
+  Memory usage: 48%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 172.31.34.29
+
+  => / is using 88.7% of 6.61GB
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+4 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Wed May 27 00:04:42 2026 from 74.71.157.171
+ubuntu@ip-172-31-34-29:~$ mongosh "mongodb+srv://cluster0.vneefgp.mongodb.net/" --apiVersion 1 --username admin
+Enter password: *********
+Current Mongosh Log ID: 6a163aaced9624fd139df8a2
+Connecting to:          mongodb+srv://<credentials>@cluster0.vneefgp.mongodb.net/?appName=mongosh+2.8.3
+Using MongoDB:          8.0.23 (API Version 1)
+Using Mongosh:          2.8.3
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-bnuzrx-shard-0 [primary] test> use sampleDB
+switched to db sampleDB
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find().limit(2)
+[
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a8'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a7'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find().limit(1)
+[
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a8'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find().skip(1)
+[
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a7'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a3'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a4'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find({title: "NoSQL Database"}).limit(2).skip(1)
+[
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a4'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find({},{"title":1,_id:0}).sort({"title":1})
+[
+  { title: 'New MongoDB Tutorial' },
+  { title: 'New MongoDB Tutorial' },
+  { title: 'NoSQL Database' },
+  { title: 'NoSQL Database' }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find({},{"title":1,_id:0}).sort({"title":-1})
+[
+  { title: 'NoSQL Database' },
+  { title: 'NoSQL Database' },
+  { title: 'New MongoDB Tutorial' },
+  { title: 'New MongoDB Tutorial' }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find().sort({"title":-1})
+[
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a8'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a4'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a7'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a3'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.find().sort({"likes":1})
+[
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a8'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a4'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate('2013-12-10T02:35:00.000Z'),
+        like: 0
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6a0e6f28b6c8a0f1569df8a7'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6a14eb8860c8d9f3459df8a3'),
+    title: 'New MongoDB Tutorial',
+    description: 'MongoDB is no SQL database',
+    by: 'bootcamp',
+    url: 'http://www.bootcamp.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  }
+]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.aggregate([{$group : {_id : "$by", sumofLikes : {$sum : "$likes"}}}])
+[ { _id: 'bootcamp', sumofLikes: 240 } ]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.aggregate([{$group : {_id : "$by", num_tutorial : {$sum : 1}}}])
+[ { _id: 'bootcamp', num_tutorial: 4 } ]
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.createIndex({"title":1})
+title_1
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> db.mycol.dropIndex({"title":1})
+{
+  nIndexesWas: 2,
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1779843422, i: 18 }),
+    signature: {
+      hash: Binary.createFromBase64('ZsYfZ87+NghisMazRsojyXbLDeI=', 0),
+      keyId: Long('7606418271268503574')
+    }
+  },
+  operationTime: Timestamp({ t: 1779843422, i: 17 })
+}
+Atlas atlas-bnuzrx-shard-0 [primary] sampleDB> Connection to ec2-18-226-78-226.us-east-2.compute.amazonaws.com closed by remote host.
+Connection to ec2-18-226-78-226.us-east-2.compute.amazonaws.com closed.
+
+C:\Users\kesha\Downloads>
